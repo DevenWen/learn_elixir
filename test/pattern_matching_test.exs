@@ -28,7 +28,27 @@ defmodule PatternMatchingTest do
 
 
   test "Pin" do
+    # = 除了是模式匹配，还能赋值，Pin 操作符是一个完整的匹配操作符
     x = 1
+    ^x = 1
+    x = 2
+    ^x = 2
+  end
+
+  test "Pin 2" do
+    key = "hello"
+    %{^key => value} = %{"hello" => "world"}
+    assert value = "world"
+    # 可以用作 map 获取数据
+
+    %{^key => value} = %{"hello" => "world", :hello => "world2"}
+    assert value = "world"
+
+
+
+
+
+
   end
 
 end
