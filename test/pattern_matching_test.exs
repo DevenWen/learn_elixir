@@ -43,12 +43,18 @@ defmodule PatternMatchingTest do
 
     %{^key => value} = %{"hello" => "world", :hello => "world2"}
     assert value = "world"
+  end
 
+  test "Pin in fun" do
+    greeting = "Hello"
 
+    greet = fn
+      (^greeting, name)-> "Hi, #{name}"
+      (greeting, name) -> "#{greeting}, #{name}"
+    end
 
-
-
-
+    assert "Hi, Sean" = greet.("Hello", "Sean")
+    assert "Mornin', Sean" = greet.("Mornin'", "Sean")
   end
 
 end
