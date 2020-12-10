@@ -1,5 +1,7 @@
 # HelloWorld
 
+Elixir 的 Hello World 项目
+
 **TODO: Add description**
 
 ## Installation
