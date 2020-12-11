@@ -4,11 +4,11 @@ defmodule PatternMatchingTest do
 
   test "pattern matching A" do
     x = 1
-    assert 1 = x
-    assert 2 != x
+    assert 1 == x
+    refute 2 == x
     x = 2
-    assert 1 != x
-    assert 2 = x
+    refute 1 == x
+    assert 2 == x
 
     # 模式匹配异常
     # 1 = x
