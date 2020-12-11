@@ -32,12 +32,12 @@ defmodule ModuleDemo.UserTest do
   end
 
 
-  import List, only: [last: 1]
+  import List, only: [delete: 2]
   test "import" do
     l = [1,2,3,4]
     # delete
     # 报错
-    # l = delete(l, 2)
+    l = delete(l, 2)
     assert [1,3,4] == l
   end
 
