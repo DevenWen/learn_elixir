@@ -1,26 +1,7 @@
-defmodule HelloWorld do
-  @moduledoc """
-  Documentation for `HelloWorld`.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> HelloWorld.hello()
-      :world
-
-  """
-  def hello do
-    IO.puts("hello world")
-    :world
-  end
-
+defmodule HelloWorld.CLI do
+  @moduledoc false
 
   def main(args \\ []) do
-    IO.puts("hello world")
-
     args
     |> parse_args
     |> response
@@ -38,4 +19,5 @@ defmodule HelloWorld do
   defp response({opts, word}) do
     if opts[:upcase], do: String.upcase(word), else: word
   end
+
 end
