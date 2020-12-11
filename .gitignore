@@ -2,3 +2,8 @@
 .vscode
 ._build
 *.iml
+.idea
+_build
+deps
+doc
+mix.lock
