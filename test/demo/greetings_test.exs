@@ -1,11 +1,10 @@
-defmodule GreetingsTest do
+defmodule Demo.GreetingsTest do
   use ExUnit.Case
 
-  alias Greetings
+  alias Demo.Greetings
 
   @moduletag :capture_log
-
-  doctest Greetings
+  doctest Demo.Greetings
 
   test "module exists" do
     assert is_list(Greetings.module_info())

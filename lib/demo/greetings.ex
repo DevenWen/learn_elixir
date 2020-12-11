@@ -1,4 +1,4 @@
-defmodule Greetings do
+defmodule Demo.Greetings do
   @moduledoc false
 
   @greeting "Hi"
