@@ -10,5 +10,4 @@ defmodule ModuleDemoTest do
 
     assert "Hello qpm" == ModuleDemo.greeting("qpm")
   end
-
 end

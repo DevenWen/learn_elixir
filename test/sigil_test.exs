@@ -21,7 +21,6 @@ defmodule SigilTest do
     # todo "=~" 是什么符号？正则表达式的特定符号么？
     assert "elixir" =~ re
 
-
     # i 关闭正则表达式
     re = ~r/elixir/i
     assert "ELIXIR" =~ re
@@ -56,6 +55,4 @@ defmodule SigilTest do
   test "my sigil" do
     assert "ELIXIR SCHOOL" == ~p/elixir school/
   end
-
 end
-

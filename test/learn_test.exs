@@ -10,7 +10,6 @@ defmodule LearnTest do
     assert capture_io(fn -> IO.puts("Hello World") end) == "Hello World\n"
   end
 
-
   # Test 配置
   setup_all do
     {:ok, number: 2}
@@ -19,6 +18,4 @@ defmodule LearnTest do
   test "the truth", state do
     assert 1 + 1 == state[:number]
   end
-
-
 end

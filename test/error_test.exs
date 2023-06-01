@@ -7,7 +7,9 @@ defmodule ErrorTest do
   end
 
   test "Raise 2" do
-    assert_raise MyRuntimeException, fn -> raise MyRuntimeException, message: "the argument value is invalid" end
+    assert_raise MyRuntimeException, fn ->
+      raise MyRuntimeException, message: "the argument value is invalid"
+    end
   end
 
   test "try-rescue" do
@@ -20,6 +22,7 @@ defmodule ErrorTest do
 
   test "try-rescue-after" do
     point = 0
+
     try do
       assert point == 0
       raise MyRuntimeException, message: "An error call here"
@@ -29,10 +32,8 @@ defmodule ErrorTest do
       point = 1
       assert point == 1
     end
+
     # 不能使用顺序编程的思路去理解，不能往函数程序中传值
     refute point == 1
   end
-
-
-
 end

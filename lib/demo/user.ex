@@ -10,5 +10,4 @@ defmodule ModuleDemo.User do
   defstruct name: "Sean", roles: []
 
   def greeting(name), do: Greetings.morning(name)
-
 end

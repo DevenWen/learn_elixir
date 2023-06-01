@@ -13,5 +13,4 @@ defmodule Concurrent.ExampleV4 do
         IO.puts("Exit reason: #{reason}")
     end
   end
-
 end

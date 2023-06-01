@@ -5,9 +5,8 @@ defmodule TimeTest do
     assert is_list(Time.module_info())
   end
 
-
   test "time 1" do
-    t = Time.utc_now
+    t = Time.utc_now()
     IO.puts(t)
   end
 
@@ -19,12 +18,9 @@ defmodule TimeTest do
   end
 
   test "Date" do
-    {:ok, date} = Date.new(2020,12,11)
+    {:ok, date} = Date.new(2020, 12, 11)
     assert date.day == 11
     assert date.month == 12
     assert date.year == 2020
   end
-
-
-
 end

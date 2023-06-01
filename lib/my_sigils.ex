@@ -7,5 +7,4 @@ defmodule MySigils do
   自定义的 sigil，将参数大写
   """
   def sigil_p(string, []), do: String.upcase(string)
-
 end

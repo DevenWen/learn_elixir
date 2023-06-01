@@ -10,5 +10,4 @@ defmodule Demo.Greetings do
   def evening(name) do
     "Goods night #{name}}"
   end
-
 end

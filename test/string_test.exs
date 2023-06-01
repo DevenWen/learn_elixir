@@ -43,7 +43,4 @@ defmodule StringTest do
 
     assert_raise FunctionClauseError, fn -> anagrams?(1, 2) end
   end
-
-
-
 end

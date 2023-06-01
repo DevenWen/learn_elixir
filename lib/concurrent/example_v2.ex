@@ -6,7 +6,7 @@ defmodule Concurrent.ExampleV2 do
       {:ok, "hello"} ->
         IO.puts("World")
     end
+
     listen()
   end
-
 end

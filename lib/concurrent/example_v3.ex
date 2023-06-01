@@ -6,7 +6,6 @@ defmodule Concurrent.ExampleV3 do
     exit(:kaboom)
   end
 
-
   def run do
     Process.flag(:trap_exit, true)
     spawn_link(Concurrent.ExampleV3, :explode, [])
@@ -16,5 +15,4 @@ defmodule Concurrent.ExampleV3 do
         IO.puts("Exit reason: #{reason}")
     end
   end
-
 end

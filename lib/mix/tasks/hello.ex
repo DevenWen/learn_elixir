@@ -5,5 +5,4 @@ defmodule Mix.Tasks.Hello do
   def run(_) do
     HelloWorld.hello()
   end
-
 end

@@ -3,7 +3,7 @@ defmodule FunctionTest do
   @moduletag :capture_log
 
   test "function 1" do
-    sum = fn (a, b) -> a + b end
+    sum = fn a, b -> a + b end
     assert 5 == sum.(2, 3)
   end
 
@@ -17,17 +17,16 @@ defmodule FunctionTest do
     # 方法重载
     handle_result = fn
       {:ok, result} ->
-            IO.puts("Handling result #{result}}")
-            :confirm
+        IO.puts("Handling result #{result}}")
+        :confirm
 
       {:error, reason} ->
-            IO.puts("handling error, #{reason}")
-            :cancel
-
+        IO.puts("handling error, #{reason}")
+        :cancel
     end
+
     assert :confirm == handle_result.({:ok, 123})
   end
-
 
   def hi(name) do
     "Hello, " <> name
@@ -40,13 +39,12 @@ defmodule FunctionTest do
     assert hi("Sean") == "Hello, Sean"
   end
 
-
   def of([]), do: 0
   def of([_ | tail]), do: 1 + of(tail)
 
   test "test length" do
     assert of([]) == 0
-    assert of([1,2,3,4]) == 4
+    assert of([1, 2, 3, 4]) == 4
   end
 
   def hello(), do: "Hello, anonymous person!"
@@ -69,14 +67,14 @@ defmodule FunctionTest do
 
   test "func test 3" do
     fred = %{
-    name: "Fred",
-    age: 95
+      name: "Fred",
+      age: 95
     }
+
     assert "Hello, Fred" = helloPerson(fred)
   end
 
-
-#  私有函数
+  #  私有函数
 
   defp phrase(name), do: "Hello " <> name
 
@@ -92,7 +90,7 @@ defmodule FunctionTest do
   end
 
   test "test fun when" do
-    assert "1,2,3,4" = helloGays([1,2,3,4])
+    assert "1,2,3,4" = helloGays([1, 2, 3, 4])
   end
 
   # 默认参数
@@ -104,13 +102,7 @@ defmodule FunctionTest do
   def change("en"), do: "Hello, "
   def change("es"), do: "Hola, "
 
-
   test "test for language code" do
     assert getByLanguageCode("qpm") == "Hello, qpm"
   end
-
-
-
-
-
 end

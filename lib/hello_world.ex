@@ -17,7 +17,6 @@ defmodule HelloWorld do
     :world
   end
 
-
   def main(args \\ []) do
     IO.puts("hello world")
 

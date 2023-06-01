@@ -2,7 +2,6 @@ defmodule PipelineTest do
   use ExUnit.Case
   @moduletag :capture_log
 
-
   # 管道，拿到返回值后，马上又递交给新的函数。
   # 用以往的语言：
   # fun(fun2(fun3())))
@@ -12,8 +11,4 @@ defmodule PipelineTest do
   test "Upcase and split" do
     assert ["ELIXIR", "ROCKS"] == "Elixir rocks" |> String.upcase() |> String.split()
   end
-
-
-
-
 end

@@ -15,8 +15,8 @@ defmodule PatternMatchingTest do
   end
 
   test "pattern matching list" do
-    list = [1,2,3]
-    [1,2,3] = list
+    list = [1, 2, 3]
+    [1, 2, 3] = list
 
     # [] = list  匹配异常
   end
@@ -25,7 +25,6 @@ defmodule PatternMatchingTest do
     {:ok, value} = {:ok, "Successful!"}
     assert "Successful!" == value
   end
-
 
   test "Pin" do
     # = 除了是模式匹配，还能赋值，Pin 操作符是一个完整的匹配操作符
@@ -49,12 +48,11 @@ defmodule PatternMatchingTest do
     greeting = "Hello"
 
     greet = fn
-      (^greeting, name)-> "Hi, #{name}"
-      (greeting, name) -> "#{greeting}, #{name}"
+      ^greeting, name -> "Hi, #{name}"
+      greeting, name -> "#{greeting}, #{name}"
     end
 
     assert "Hi, Sean" = greet.("Hello", "Sean")
     assert "Mornin', Sean" = greet.("Mornin'", "Sean")
   end
-
 end

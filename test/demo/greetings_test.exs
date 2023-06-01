@@ -17,6 +17,4 @@ defmodule Demo.GreetingsTest do
   test "test module fun2" do
     assert "Hi Goods morning qpm" == Greetings.morning("qpm")
   end
-
-
 end
