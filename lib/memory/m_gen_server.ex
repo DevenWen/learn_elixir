@@ -24,6 +24,20 @@ defmodule Memory.MGenServer do
     GenServer.call(__MODULE__, :all)
   end
 
+  def start(thread, size, interval) do
+    value = 1..size |> Enum.map(fn x -> x * x end)
+    1..thread
+    |> Enum.map(fn _ -> spawn(fn -> Stream.interval(interval) |> Enum.each(fn _ -> pass(value) end) end) end)
+  end
+
+  def stop(pid) do
+    Process.exit(pid, :kill)
+  end
+
+  def info() do
+    Process.whereis(__MODULE__) |> Process.info()
+  end
+
   def start_link do
     GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
   end
@@ -72,8 +86,10 @@ defmodule Memory.MGenServer.Monitor do
   end
 
   def handle_info(:tick, {pid, file}) do
-    memory = Process.info(pid, :memory)
-    IO.write(file, "#{inspect DateTime.utc_now()}: #{inspect memory}\n")
+    {_, memory} = Process.info(pid, :memory)
+    process_info = Process.info(pid)
+
+    IO.write(file, "#{inspect DateTime.utc_now()} memory_size: #{memory}\theap_size:#{process_info[:heap_size]}\tminor_gcs:#{process_info[:garbage_collection][:minor_gcs]}\n")
     Process.send_after(self(), :tick, 1000)
     {:noreply, {pid, file}}
   end
