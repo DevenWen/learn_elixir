@@ -15,6 +15,7 @@ defmodule HelloWorld.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      mod: {Learn.Elixir.Application, []},
       extra_applications: [:logger]
     ]
   end
@@ -27,7 +28,11 @@ defmodule HelloWorld.MixProject do
       {:gen_stage, "~> 1.0.0"},
       {:earmark, "~> 1.2", only: :dev},
       {:ex_doc, "~> 0.19", only: :dev},
-      {:benchee, "~> 1.0", only: :test}
+      {:benchee, "~> 1.0", only: :test},
+      {:kafka_ex, "~> 0.11"},
+      {:snappy, git: "https://github.com/fdmanana/snappy-erlang-nif"},
+      {:snappyer, "~> 1.2"},
+      {:telemetry, "~> 1.0"}
     ]
   end
 end
