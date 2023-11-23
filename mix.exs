@@ -29,7 +29,7 @@ defmodule HelloWorld.MixProject do
       {:earmark, "~> 1.2", only: :dev},
       {:ex_doc, "~> 0.19", only: :dev},
       {:benchee, "~> 1.0", only: :test},
-      {:kafka_ex, "~> 0.11"},
+      # {:kafka_ex, "~> 0.11"},
       {:snappy, git: "https://github.com/fdmanana/snappy-erlang-nif"},
       {:snappyer, "~> 1.2"},
       {:telemetry, "~> 1.0"}
