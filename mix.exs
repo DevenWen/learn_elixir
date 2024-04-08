@@ -32,7 +32,8 @@ defmodule HelloWorld.MixProject do
       # {:kafka_ex, "~> 0.11"},
       {:snappy, git: "https://github.com/fdmanana/snappy-erlang-nif"},
       {:snappyer, "~> 1.2"},
-      {:telemetry, "~> 1.0"}
+      {:telemetry, "~> 1.0"},
+      {:patch, "~> 0.13.0", only: [:test]}
     ]
   end
 end
