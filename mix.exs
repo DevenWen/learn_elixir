@@ -33,7 +33,8 @@ defmodule HelloWorld.MixProject do
       {:snappy, git: "https://github.com/fdmanana/snappy-erlang-nif"},
       {:snappyer, "~> 1.2"},
       {:telemetry, "~> 1.0"},
-      {:patch, "~> 0.13.0", only: [:test]}
+      {:patch, "~> 0.13.0", only: [:test]},
+      {:ex_hash_ring, "~> 6.0"}
     ]
   end
 end
